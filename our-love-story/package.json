@@ -1,0 +1,19 @@
+{
+  "name": "our-love-story",
+  "version": "1.0.0",
+  "description": "A beautiful website about our love story",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "astro": "^4.0.3"
+  }
+}

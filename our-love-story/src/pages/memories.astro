@@ -1,0 +1,31 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const memories = [
+    {
+        date: 'First Date',
+        title: 'How We Met',
+        description: 'The story of your first meeting...'
+    }
+    // Add more memories here
+];
+---
+
+<MainLayout title="Our Memories">
+    <section class="memories">
+        <div class="container">
+            <h2>Our Favorite Memories</h2>
+            <div class="timeline">
+                {memories.map(memory => (
+                    <div class="memory-item">
+                        <div class="date">{memory.date}</div>
+                        <div class="content">
+                            <h3>{memory.title}</h3>
+                            <p>{memory.description}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+</MainLayout>

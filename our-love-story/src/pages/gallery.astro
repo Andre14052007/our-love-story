@@ -1,0 +1,21 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const photos = [
+    // Add your photo data here
+    // { src: '/images/photo1.jpg', alt: 'Description' }
+];
+---
+
+<MainLayout title="Photo Gallery">
+    <section class="gallery">
+        <div class="container">
+            <h2>Photo Gallery</h2>
+            <div class="gallery-grid">
+                {photos.map(photo => (
+                    <img src={photo.src} alt={photo.alt} />
+                ))}
+            </div>
+        </div>
+    </section>
+</MainLayout>
