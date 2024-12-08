@@ -1,3 +1,8 @@
 import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
+import react from '@astrojs/react';
 
-export default defineConfig({});
+export default defineConfig({
+  integrations: [tailwind(), react()],
+  site: 'https://our-love-story.vercel.app'
+});

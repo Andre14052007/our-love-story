@@ -1,14 +1,95 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Our Love Story</title>
-  </head>
-  <body>
-    <h1>Our Love Story</h1>
-    <p>Coming soon...</p>
-  </body>
-</html>
+<Layout title="Our Love Story">
+  <Nav />
+  <Hero />
+  
+  <main>
+    <section id="story" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-4xl font-playfair text-gray-900 mb-4">Our Journey Together</h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Every moment spent together adds another beautiful chapter to our story.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6" data-aos="fade-right">
+            <div class="bg-rose-50 p-6 rounded-lg">
+              <h3 class="font-playfair text-2xl text-rose-600 mb-3">How We Met</h3>
+              <p class="text-gray-700">
+                Share the story of how you first met your girlfriend...
+              </p>
+            </div>
+            <div class="bg-purple-50 p-6 rounded-lg">
+              <h3 class="font-playfair text-2xl text-purple-600 mb-3">First Date</h3>
+              <p class="text-gray-700">
+                Describe your memorable first date together...
+              </p>
+            </div>
+          </div>
+
+          <div class="relative" data-aos="fade-left">
+            <!-- Replace with your couple photo -->
+            <img
+              src="https://images.unsplash.com/photo-1519834785169-98be25ec3f84?ixlib=rb-4.0.3"
+              alt="Couple"
+              class="rounded-lg shadow-lg"
+            />
+            <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
+              <p class="font-playfair text-rose-600 text-lg">❤️ Together since 2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-4xl font-playfair text-gray-900 mb-4">Special Moments</h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            Capturing the beautiful moments we've shared together.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[1, 2, 3].map((_, index) => (
+            <div
+              class="relative overflow-hidden rounded-lg shadow-lg group"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <!-- Replace with your photos -->
+              <img
+                src={`https://source.unsplash.com/random/800x600?couple&sig=${index}`}
+                alt="Special moment"
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div class="absolute bottom-0 left-0 right-0 p-4">
+                  <h3 class="text-white font-playfair text-xl">Special Moment {index + 1}</h3>
+                  <p class="text-white/80">Brief description of this moment...</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="/gallery"
+            class="inline-block bg-rose-600 text-white px-8 py-3 rounded-full font-medium hover:bg-rose-700 transition-colors"
+          >
+            View Gallery
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
