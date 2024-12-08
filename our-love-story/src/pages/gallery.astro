@@ -1,21 +1,77 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 
 const photos = [
-    // Add your photo data here
-    // { src: '/images/photo1.jpg', alt: 'Description' }
+    {
+        src: 'https://images.unsplash.com/photo-1519741497674-611481863552',
+        alt: 'Love photo placeholder 1',
+        caption: 'Our first date'
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486',
+        alt: 'Love photo placeholder 2',
+        caption: 'Valentine\'s Day'
+    },
+    {
+        src: 'https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00',
+        alt: 'Love photo placeholder 3',
+        caption: 'Beach day'
+    },
+    // Add more photos as needed
 ];
 ---
 
-<MainLayout title="Photo Gallery">
-    <section class="gallery">
-        <div class="container">
-            <h2>Photo Gallery</h2>
-            <div class="gallery-grid">
-                {photos.map(photo => (
-                    <img src={photo.src} alt={photo.alt} />
+<Layout title="Our Photo Gallery">
+    <Nav />
+    <main class="pt-20 min-h-screen bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h1 class="text-5xl md:text-6xl font-playfair mb-6 bg-gradient-to-r from-rose-300 to-purple-300 text-transparent bg-clip-text text-center">
+                Our Photo Gallery
+            </h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto text-center mb-16">
+                A collection of our most cherished moments captured in photographs
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {photos.map((photo) => (
+                    <div class="group relative overflow-hidden rounded-2xl">
+                        <div class="absolute inset-0.5 bg-gradient-to-r from-rose-500 to-purple-500 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                            <img
+                                src={photo.src}
+                                alt={photo.alt}
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700"
+                            />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div class="absolute bottom-0 left-0 right-0 p-4">
+                                    <p class="text-white text-lg font-medium">{photo.caption}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>
-    </section>
-</MainLayout>
+    </main>
+    <Footer />
+</Layout>
+
+<style>
+    .gallery {
+        opacity: 0;
+        animation: fadeIn 1s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
