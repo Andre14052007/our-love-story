@@ -1,19 +1,18 @@
 {
   "name": "our-love-story",
-  "version": "1.0.0",
-  "description": "A beautiful website about our love story",
   "type": "module",
-  "main": "index.js",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "astro": "^4.0.3"
+  },
+  "devDependencies": {
+    "@astrojs/vercel": "^5.2.0"
   }
 }
