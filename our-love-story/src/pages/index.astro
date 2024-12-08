@@ -9,84 +9,120 @@ import Hero from '../components/Hero.astro';
   <Hero />
   
   <main>
-    <section id="story" class="py-20 bg-white">
+    <section id="story" class="py-32 bg-gradient-to-b from-black to-gray-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
-          <h2 class="text-4xl font-playfair text-gray-900 mb-4">Our Journey Together</h2>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Every moment spent together adds another beautiful chapter to our story.
+        <div class="text-center mb-20" data-aos="fade-up">
+          <h2 class="text-5xl font-playfair text-white mb-6 bg-gradient-to-r from-rose-300 to-purple-300 text-transparent bg-clip-text">Our Journey Together</h2>
+          <p class="text-xl text-gray-400 max-w-2xl mx-auto font-light">
+            Every moment with you feels like a beautiful dream come true
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div class="space-y-6" data-aos="fade-right">
-            <div class="bg-rose-50 p-6 rounded-lg">
-              <h3 class="font-playfair text-2xl text-rose-600 mb-3">How We Met</h3>
-              <p class="text-gray-700">
-                Share the story of how you first met your girlfriend...
-              </p>
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="space-y-8" data-aos="fade-right">
+            <div class="relative group">
+              <div class="absolute inset-0.5 bg-gradient-to-r from-rose-500 to-purple-500 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
+              <div class="relative bg-gray-900 p-8 rounded-2xl">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="w-12 h-12 rounded-full bg-gradient-to-r from-rose-500 to-purple-500 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                  </div>
+                  <h3 class="font-playfair text-2xl text-white">How We Met</h3>
+                </div>
+                <p class="text-gray-400 leading-relaxed">
+                  Share the story of how you first met your girlfriend...
+                </p>
+              </div>
             </div>
-            <div class="bg-purple-50 p-6 rounded-lg">
-              <h3 class="font-playfair text-2xl text-purple-600 mb-3">First Date</h3>
-              <p class="text-gray-700">
-                Describe your memorable first date together...
-              </p>
+            
+            <div class="relative group">
+              <div class="absolute inset-0.5 bg-gradient-to-r from-rose-500 to-purple-500 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
+              <div class="relative bg-gray-900 p-8 rounded-2xl">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="w-12 h-12 rounded-full bg-gradient-to-r from-rose-500 to-purple-500 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 class="font-playfair text-2xl text-white">First Date</h3>
+                </div>
+                <p class="text-gray-400 leading-relaxed">
+                  Describe your memorable first date together...
+                </p>
+              </div>
             </div>
           </div>
 
-          <div class="relative" data-aos="fade-left">
-            <!-- Replace with your couple photo -->
-            <img
-              src="https://images.unsplash.com/photo-1519834785169-98be25ec3f84?ixlib=rb-4.0.3"
-              alt="Couple"
-              class="rounded-lg shadow-lg"
-            />
-            <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
-              <p class="font-playfair text-rose-600 text-lg">❤️ Together since 2023</p>
+          <div class="relative group" data-aos="fade-left">
+            <div class="absolute inset-1 bg-gradient-to-r from-rose-500 to-purple-500 rounded-2xl blur opacity-75"></div>
+            <div class="relative overflow-hidden rounded-2xl">
+              <!-- Replace with your couple photo -->
+              <img
+                src="https://images.unsplash.com/photo-1519834785169-98be25ec3f84?ixlib=rb-4.0.3"
+                alt="Couple"
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-8">
+                <p class="font-playfair text-white text-xl">❤️ Together since 2023</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-20 bg-gray-50">
+    <section class="py-32 bg-gray-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up">
-          <h2 class="text-4xl font-playfair text-gray-900 mb-4">Special Moments</h2>
-          <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-            Capturing the beautiful moments we've shared together.
+        <div class="text-center mb-20" data-aos="fade-up">
+          <h2 class="text-5xl font-playfair text-white mb-6 bg-gradient-to-r from-rose-300 to-purple-300 text-transparent bg-clip-text">Special Moments</h2>
+          <p class="text-xl text-gray-400 max-w-2xl mx-auto font-light">
+            Every photograph tells a story of our love
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[1, 2, 3].map((_, index) => (
             <div
-              class="relative overflow-hidden rounded-lg shadow-lg group"
+              class="group relative aspect-[3/4] overflow-hidden rounded-2xl"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <!-- Replace with your photos -->
-              <img
-                src={`https://source.unsplash.com/random/800x600?couple&sig=${index}`}
-                alt="Special moment"
-                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div class="absolute bottom-0 left-0 right-0 p-4">
-                  <h3 class="text-white font-playfair text-xl">Special Moment {index + 1}</h3>
-                  <p class="text-white/80">Brief description of this moment...</p>
+              <div class="absolute inset-0.5 bg-gradient-to-r from-rose-500 to-purple-500 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-1000"></div>
+              <div class="relative h-full overflow-hidden rounded-2xl">
+                <!-- Replace with your photos -->
+                <img
+                  src={`https://source.unsplash.com/random/800x1200?couple&sig=${index}`}
+                  alt="Special moment"
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div class="absolute bottom-0 left-0 right-0 p-8">
+                    <h3 class="text-white font-playfair text-2xl mb-2">Special Moment {index + 1}</h3>
+                    <p class="text-gray-300 font-light">Brief description of this moment...</p>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div class="text-center mt-12">
+        <div class="text-center mt-16">
           <a
             href="/gallery"
-            class="inline-block bg-rose-600 text-white px-8 py-3 rounded-full font-medium hover:bg-rose-700 transition-colors"
+            class="group relative inline-flex items-center gap-2 px-8 py-4 overflow-hidden rounded-full bg-gradient-to-r from-rose-500 to-purple-500 hover:from-rose-600 hover:to-purple-600 transition-all"
           >
-            View Gallery
+            <span class="relative z-10 font-medium text-white">View All Memories</span>
+            <svg 
+              class="w-5 h-5 text-white transition-transform group-hover:translate-x-1" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
           </a>
         </div>
       </div>

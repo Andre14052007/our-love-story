@@ -1,46 +1,107 @@
 ---
 ---
 
-<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+  <!-- Parallax background -->
   <div class="absolute inset-0 z-0">
-    <div class="absolute inset-0 bg-gradient-to-r from-rose-500/30 to-purple-500/30 mix-blend-multiply"></div>
-    <!-- Replace the URL with your couple photo -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0%,transparent_100%)]"></div>
+    <!-- Replace with your main couple photo -->
     <img
-      src="https://images.unsplash.com/photo-1519834785169-98be25ec3f84?ixlib=rb-4.0.3"
+      src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-4.0.3"
       alt="Couple"
-      class="w-full h-full object-cover"
+      class="w-full h-full object-cover opacity-60"
     />
   </div>
   
-  <div class="relative z-10 text-center text-white" data-aos="fade-up">
-    <h1 class="font-playfair text-5xl md:text-7xl mb-4">Our Love Story</h1>
-    <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto px-4">
-      Every love story is beautiful, but ours is my favorite
+  <!-- Floating elements -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute w-full h-full">
+      {Array(20).fill('').map((_, i) => (
+        <div
+          class="absolute rounded-full bg-white/10 backdrop-blur-sm"
+          style={{
+            width: `${Math.random() * 10 + 5}px`,
+            height: `${Math.random() * 10 + 5}px`,
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animation: `float ${Math.random() * 10 + 10}s linear infinite`,
+            animationDelay: `${Math.random() * 5}s`
+          }}
+        />
+      ))}
+    </div>
+  </div>
+  
+  <!-- Main content -->
+  <div class="relative z-10 text-center text-white max-w-5xl mx-auto px-4" data-aos="fade-up">
+    <h1 class="font-playfair text-6xl md:text-8xl mb-6 bg-gradient-to-r from-rose-300 to-purple-300 text-transparent bg-clip-text">
+      Our Love Story
+    </h1>
+    <p class="text-xl md:text-2xl mb-12 text-gray-300 font-light max-w-2xl mx-auto leading-relaxed">
+      Two souls, one heart, endless memories to share
     </p>
-    <a
-      href="#story"
-      class="inline-block bg-white text-rose-600 px-8 py-3 rounded-full font-medium hover:bg-rose-50 transition-colors"
-    >
-      Read Our Story
-    </a>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a
+        href="#story"
+        class="group relative px-8 py-3 overflow-hidden rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors"
+      >
+        <div class="relative z-10 flex items-center gap-2">
+          <span class="font-medium">Explore Our Journey</span>
+          <svg 
+            class="w-4 h-4 transition-transform group-hover:translate-x-1" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </div>
+      </a>
+      <a
+        href="/gallery"
+        class="group relative px-8 py-3 overflow-hidden rounded-full bg-gradient-to-r from-rose-500 to-purple-500 hover:from-rose-600 hover:to-purple-600 transition-all"
+      >
+        <div class="relative z-10 flex items-center gap-2">
+          <span class="font-medium">View Gallery</span>
+          <svg 
+            class="w-4 h-4 transition-transform group-hover:translate-x-1" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </div>
+      </a>
+    </div>
   </div>
 
+  <!-- Scroll indicator -->
   <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-    <a href="#story" class="text-white animate-bounce">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-8 w-8"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M19 14l-7 7m0 0l-7-7m7 7V3"
-        />
-      </svg>
+    <a href="#story" class="text-white/50 hover:text-white transition-colors">
+      <div class="flex flex-col items-center gap-2">
+        <span class="text-sm font-light">Scroll to explore</span>
+        <div class="w-5 h-8 rounded-full border-2 border-current p-1">
+          <div class="w-1 h-1.5 bg-current rounded-full animate-scroll"></div>
+        </div>
+      </div>
     </a>
   </div>
 </section>
+
+<style>
+  @keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-100px) rotate(180deg); }
+    100% { transform: translateY(0) rotate(360deg); }
+  }
+  @keyframes scroll {
+    0% { transform: translateY(0); opacity: 1; }
+    90% { transform: translateY(15px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 0; }
+  }
+  .animate-scroll {
+    animation: scroll 2s ease-in-out infinite;
+  }
+</style>
