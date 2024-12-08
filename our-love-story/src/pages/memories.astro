@@ -1,5 +1,7 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 
 const memories = [
     {
@@ -11,21 +13,30 @@ const memories = [
 ];
 ---
 
-<MainLayout title="Our Memories">
-    <section class="memories">
-        <div class="container">
-            <h2>Our Favorite Memories</h2>
-            <div class="timeline">
-                {memories.map(memory => (
-                    <div class="memory-item">
-                        <div class="date">{memory.date}</div>
-                        <div class="content">
-                            <h3>{memory.title}</h3>
-                            <p>{memory.description}</p>
+<Layout title="Our Memories">
+    <Nav />
+    <main class="pt-20 min-h-screen bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h1 class="text-5xl md:text-6xl font-playfair mb-6 bg-gradient-to-r from-rose-300 to-purple-300 text-transparent bg-clip-text text-center">
+                Our Memories
+            </h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto text-center mb-16">
+                A collection of our most precious moments together
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {memories.map((memory) => (
+                    <div class="group relative">
+                        <div class="absolute inset-0.5 bg-gradient-to-r from-rose-500 to-purple-500 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative bg-gray-900 p-6 rounded-2xl">
+                            <span class="text-rose-500 font-medium">{memory.date}</span>
+                            <h3 class="text-2xl font-playfair text-white mt-2">{memory.title}</h3>
+                            <p class="text-gray-400 mt-4">{memory.description}</p>
                         </div>
                     </div>
                 ))}
             </div>
         </div>
-    </section>
-</MainLayout>
+    </main>
+    <Footer />
+</Layout>
