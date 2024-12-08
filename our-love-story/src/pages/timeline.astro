@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const timelineEvents = [
+  {
+    date: 'January 2023',
+    title: 'First Meeting',
+    description: 'The day our paths crossed and our story began...',
+    image: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3',
+    icon: 'M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z'
+  },
+  {
+    date: 'February 2023',
+    title: 'First Date',
+    description: 'A magical evening that marked the beginning of our journey together...',
+    image: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3',
+    icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
+  },
+  {
+    date: 'April 2023',
+    title: 'First Trip Together',
+    description: 'Our first adventure exploring the world side by side...',
+    image: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3',
+    icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+  },
+  // Add more timeline events here
+];
+---
+
+<Layout title="Our Timeline">
+  <Nav />
+  
+  <main class="min-h-screen bg-gradient-to-b from-black to-gray-900 pt-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <!-- Header -->
+      <div class="text-center mb-20">
+        <h1 class="text-5xl md:text-6xl font-playfair mb-6 bg-gradient-to-r from-rose-300 to-purple-300 text-transparent bg-clip-text">
+          Our Journey Together
+        </h1>
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto font-light">
+          A timeline of our most precious moments and memories
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-rose-500 to-purple-500"></div>
+
+        <!-- Timeline events -->
+        <div class="space-y-24">
+          {timelineEvents.map((event, index) => (
+            <div 
+              class="relative"
+              data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+              data-aos-delay={index * 100}
+            >
+              <!-- Date bubble -->
+              <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-r from-rose-500 to-purple-500 flex items-center justify-center">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={event.icon} />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Content card -->
+              <div class={`relative w-1/2 ${index % 2 === 0 ? 'ml-0 pr-12' : 'ml-auto pl-12'}`}>
+                <div class="group relative">
+                  <div class="absolute inset-0.5 bg-gradient-to-r from-rose-500 to-purple-500 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
+                  <div class="relative bg-gray-900 p-8 rounded-2xl">
+                    <div class="flex flex-col space-y-4">
+                      <span class="text-rose-500 font-medium">{event.date}</span>
+                      <h3 class="text-2xl font-playfair text-white">{event.title}</h3>
+                      <p class="text-gray-400 leading-relaxed">{event.description}</p>
+                      <div class="relative aspect-video rounded-lg overflow-hidden">
+                        <img 
+                          src={event.image} 
+                          alt={event.title}
+                          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .timeline-line {
+    background: linear-gradient(to bottom, theme('colors.rose.500'), theme('colors.purple.500'));
+  }
+</style>
